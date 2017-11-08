@@ -13,3 +13,11 @@ rails s
 ```
 
 Go to localhost:3000
+
+# Assumptions
+
+- A user can have a nagative balance.
+- A user can transfer with a negative balance
+- Transfer amounts are limitless
+- Any number of transfers can be created
+- A transfer is only between two registered users
