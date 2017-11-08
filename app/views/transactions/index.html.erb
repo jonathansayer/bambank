@@ -1,0 +1,39 @@
+<h1> Current Balance : <%= @balance %> </h1>
+
+<%= link_to 'Send Bambeuros', new_transaction_path %>
+
+<h2> Transactions Sent </h2>
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Amount </th>
+    <th> Balance before </th>
+    <th> Balance after </th>
+  </tr>
+  <% @sent_transactions.each do |t| %>
+    <tr>
+      <td><%= t.receiver %></td>
+      <td><%= t.amount %></td>
+      <td><%= t.before_sender_balance %></td>
+      <td><%= t.after_sender_balance %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2> Transactions Received </h2>
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Amount </th>
+    <th> Balance before </th>
+    <th> Balance after </th>
+  </tr>
+  <% @received_transactions.each do |t| %>
+    <tr>
+      <td><%= t.sender %></td>
+      <td><%= t.amount %></td>
+      <td><%= t.before_receiver_balance %></td>
+      <td><%= t.after_receiver_balance %></td>
+    </tr>
+  <% end %>
+</table>

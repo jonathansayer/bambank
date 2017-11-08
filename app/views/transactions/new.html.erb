@@ -1,0 +1,7 @@
+<h1>New Transactions</h1>
+
+<%= simple_form_for :transaction, url: transactions_path do |f| %>
+  <%= f.input :amount %>
+  <%= f.input :receiver_id, collection: @users, label_method: :full_name, value_method: :id, label: "Send to" %>
+  <%= f.submit %>
+<% end %>
